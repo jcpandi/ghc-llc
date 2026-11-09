@@ -39,8 +39,8 @@ export default function FinalCta() {
     <section ref={root} className="relative h-[100svh] overflow-hidden bg-ink">
       <div className="fc-frame absolute inset-0 overflow-hidden">
         <Image
-          src={`${finalCta.image}?auto=format&fit=crop&w=2400&q=75`}
-          alt="Cleaner vacuuming a carpeted office floor"
+          src={finalCta.image}
+          alt="Hero Cleaning Group crew cleaning a bright commercial office"
           fill
           sizes="100vw"
           className="fc-img object-cover"

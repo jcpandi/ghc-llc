@@ -94,7 +94,8 @@ export const finalCta = {
   title: "Ready for a Cleaner Property?",
   body: "Let Hero Cleaning Group take the hassle out of your turns and maintenance. Get started today.",
   cta: "Schedule Free Walkthrough",
-  image: u("1781637590564-01c65dbf2039"),
+  // Hero background from herocleaninggroup.com (served via their CDN)
+  image: "https://vibe.filesafe.space/1778382503905859514/assets/5f39e204-3d4b-42f7-97b7-3b35d9a3aab2.png",
 };
 
 export const footer = {
