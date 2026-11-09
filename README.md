@@ -31,6 +31,7 @@ components/
   FinalCta.tsx     pinned section where the framed image opens to full screen
   Footer.tsx       giant "HERO" wordmark that rises with scroll
   BookingModal.tsx popup with the booking calendar, opened by any [data-book] link
+  ChatWidget.tsx   LeadConnector chat widget (same as herocleaninggroup.com)
   SmoothScroll.tsx Lenis driven by GSAP's ticker
 lib/
   content.ts       all copy, contact details and image URLs, so edit text here

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import ChatWidget from "@/components/ChatWidget";
 
 export const metadata: Metadata = {
   title: "Hero Cleaning Group LLC — Commercial Cleaning in DFW",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="grain bg-ink font-sans text-white antialiased">
         <SmoothScroll />
         {children}
+        <ChatWidget />
       </body>
     </html>
   );
