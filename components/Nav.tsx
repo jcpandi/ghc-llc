@@ -80,7 +80,7 @@ export default function Nav() {
           <a href={brand.phoneHref} className="nav-item hidden text-sm text-white/70 hover:text-white lg:block">
             {brand.phone}
           </a>
-          <a href="#schedule" className="nav-item btn-primary hidden !px-5 !py-2.5 sm:inline-flex">
+          <a href={brand.bookingUrl} data-book className="nav-item btn-primary hidden !px-5 !py-2.5 sm:inline-flex">
             Free Walkthrough
           </a>
           <button

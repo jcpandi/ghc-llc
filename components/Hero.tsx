@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { gsap, SplitText, useGSAP, MOTION_OK, splitClasses } from "@/lib/gsap";
-import { hero, contact } from "@/lib/content";
+import { brand, hero, contact } from "@/lib/content";
 
 /**
  * Cinematic hero: a curtain lifts on a hazy, desaturated scene, then a
@@ -119,7 +119,7 @@ export default function Hero() {
           </h1>
           <p className="hero-fade mt-8 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">{hero.body}</p>
           <div className="hero-fade mt-10 flex flex-wrap gap-4">
-            <a href="#schedule" className="btn-primary">
+            <a href={brand.bookingUrl} data-book className="btn-primary">
               {hero.primary}
               <Arrow />
             </a>

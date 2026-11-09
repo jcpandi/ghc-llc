@@ -30,6 +30,7 @@ components/
   Contact.tsx      character-split title and rows that draw in
   FinalCta.tsx     pinned section where the framed image opens to full screen
   Footer.tsx       giant "HERO" wordmark that rises with scroll
+  BookingModal.tsx popup with the booking calendar, opened by any [data-book] link
   SmoothScroll.tsx Lenis driven by GSAP's ticker
 lib/
   content.ts       all copy, contact details and image URLs, so edit text here
@@ -40,4 +41,4 @@ lib/
 
 - **Reduced motion:** every animation sits inside `gsap.matchMedia("(prefers-reduced-motion: no-preference)")`. Visitors who turn motion off see the content statically, with no smooth scrolling.
 - **Images:** placeholders from Unsplash (free license) are loaded through `next/image` (`images.unsplash.com` is allowed in `next.config.ts`). Swap in your own photos by changing the URLs in `lib/content.ts`, or put files in `/public` and use `/your-file.jpg`.
-- **Booking:** the "Schedule Free Walkthrough" buttons link to the Schedule section and the phone number. If you use a booking tool such as Calendly or GoHighLevel, put its link or embed in `components/Schedule.tsx`.
+- **Booking:** every "Schedule Free Walkthrough" button opens `components/BookingModal.tsx`, a popup that embeds the booking calendar at `link.herocleaninggroup.com`. To make any other link or button open it, add `data-book` (and point its `href` at `brand.bookingUrl` so it still works without JavaScript). The calendar URL is set in `lib/content.ts`.

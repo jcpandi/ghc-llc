@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { gsap, SplitText, useGSAP, MOTION_OK, splitClasses } from "@/lib/gsap";
-import { finalCta } from "@/lib/content";
+import { brand, finalCta } from "@/lib/content";
 import { Arrow } from "./Hero";
 
 /** Pinned finale: a small framed shot opens up to fill the screen as the headline rises. */
@@ -54,7 +54,7 @@ export default function FinalCta() {
           Ready for a <span className="font-serif font-normal italic text-frost">Cleaner</span> Property?
         </h2>
         <p className="fc-fade mt-8 max-w-xl text-lg text-white/75">{finalCta.body}</p>
-        <a href="#schedule" className="fc-fade btn-primary mt-10">
+        <a href={brand.bookingUrl} data-book className="fc-fade btn-primary mt-10">
           {finalCta.cta} <Arrow />
         </a>
       </div>

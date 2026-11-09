@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { gsap, SplitText, useGSAP, MOTION_OK, splitClasses } from "@/lib/gsap";
-import { services } from "@/lib/content";
+import { brand, services } from "@/lib/content";
 import { Arrow } from "./Hero";
 
 /**
@@ -172,7 +172,7 @@ export default function Services() {
               </li>
             ))}
           </ul>
-          <a href="#schedule" className="sv-reveal btn-primary self-start">
+          <a href={brand.bookingUrl} data-book className="sv-reveal btn-primary self-start">
             Schedule Free Walkthrough <Arrow />
           </a>
         </div>

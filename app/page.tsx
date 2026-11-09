@@ -8,6 +8,7 @@ import Schedule from "@/components/Schedule";
 import Contact from "@/components/Contact";
 import FinalCta from "@/components/FinalCta";
 import Footer from "@/components/Footer";
+import BookingModal from "@/components/BookingModal";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <FinalCta />
       </main>
       <Footer />
+      <BookingModal />
     </>
   );
 }

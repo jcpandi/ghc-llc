@@ -109,7 +109,7 @@ export default function Schedule() {
               </a>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href={brand.phoneHref} className="btn-primary">
+                <a href={brand.bookingUrl} data-book className="btn-primary">
                   Schedule Free Walkthrough <Arrow />
                 </a>
                 <a href={brand.smsHref} className="btn-ghost">

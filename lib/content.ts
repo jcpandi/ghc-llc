@@ -11,6 +11,8 @@ export const brand = {
   smsHref: "sms:+16822812498",
   email: "herocleaninggroup.llc@gmail.com",
   serviceArea: "Dallas-Fort Worth Metroplex",
+  /** Booking calendar (opens in the popup; also the no-JS fallback link) */
+  bookingUrl: "https://link.herocleaninggroup.com/widget/bookings/hero-cleaning-walkthroughs",
 };
 
 export const nav = [
