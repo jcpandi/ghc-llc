@@ -71,7 +71,7 @@ export default function Hero() {
           <div className="hero-media-inner absolute inset-0">
             {/* "Before" — hazy and desaturated */}
             <Image
-              src={`${hero.image}?auto=format&fit=crop&w=2400&q=70`}
+              src={hero.image}
               alt=""
               aria-hidden
               fill
@@ -82,8 +82,8 @@ export default function Hero() {
             {/* "After" — crisp, revealed by the wipe */}
             <div className="hero-clean absolute inset-0">
               <Image
-                src={`${hero.image}?auto=format&fit=crop&w=2400&q=80`}
-                alt="Bright, freshly cleaned commercial hallway with glass doors"
+                src={hero.image}
+                alt="Hero Cleaning Group team cleaning a bright office reception area"
                 fill
                 priority
                 sizes="100vw"
