@@ -8,6 +8,8 @@ import { useGSAP } from "@gsap/react";
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
   gsap.defaults({ ease: "power3.out", duration: 1 });
+  // Don't recalculate pins when the mobile address bar shows/hides (avoids jumps)
+  ScrollTrigger.config({ ignoreMobileResize: true });
 }
 
 /** Run animations only when the visitor hasn't asked for reduced motion. */

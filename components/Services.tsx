@@ -35,8 +35,8 @@ export default function Services() {
         return () => split.revert();
       });
 
-      // Desktop horizontal journey
-      mm.add(`(min-width: 1024px) and ${MOTION_OK}`, () => {
+      // Horizontal journey (all screen sizes)
+      mm.add(MOTION_OK, () => {
         const track = root.current!.querySelector<HTMLElement>(".sv-track")!;
         const dist = () => Math.max(0, track.scrollWidth - window.innerWidth);
 
@@ -89,34 +89,15 @@ export default function Services() {
           );
         });
       });
-
-      // Mobile / tablet stack
-      mm.add(`(max-width: 1023px) and ${MOTION_OK}`, () => {
-        gsap.utils.toArray<HTMLElement>(".sv-card, .sv-also").forEach((el) => {
-          gsap.from(el, {
-            y: 60,
-            opacity: 0,
-            duration: 1.1,
-            scrollTrigger: { trigger: el, start: "top 88%" },
-          });
-          const img = el.querySelector(".sv-img");
-          if (img)
-            gsap.fromTo(img, { yPercent: -8 }, {
-              yPercent: 8,
-              ease: "none",
-              scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
-            });
-        });
-      });
     },
     { scope: root }
   );
 
   return (
-    <section id="services" ref={root} className="relative overflow-hidden bg-ink lg:h-screen">
-      <div className="sv-track flex flex-col gap-6 px-5 py-24 sm:px-8 lg:h-full lg:w-max lg:flex-row lg:items-center lg:gap-8 lg:px-[6vw] lg:py-0">
+    <section id="services" ref={root} className="relative overflow-hidden bg-ink max-lg:motion-safe:h-[100svh] lg:h-screen">
+      <div className="sv-track flex flex-col gap-6 px-5 py-24 sm:px-8 max-lg:motion-safe:h-full max-lg:motion-safe:w-max max-lg:motion-safe:flex-row max-lg:motion-safe:items-center max-lg:motion-safe:gap-4 max-lg:motion-safe:py-0 lg:h-full lg:w-max lg:flex-row lg:items-center lg:gap-8 lg:px-[6vw] lg:py-0">
         {/* Intro panel */}
-        <div className="flex shrink-0 flex-col justify-between gap-10 lg:h-[72vh] lg:w-[38vw] lg:pr-10">
+        <div className="flex shrink-0 flex-col justify-between gap-10 max-lg:motion-safe:h-[72svh] max-lg:motion-safe:w-[min(84vw,520px)] lg:h-[72vh] lg:w-[38vw] lg:pr-10">
           <div>
             <p className="sv-intro-fade mb-8 text-xs uppercase tracking-[0.25em] text-brand-2">(01) — Services</p>
             <h2 className="sv-title text-[clamp(2.5rem,4.3vw,4.75rem)] font-semibold leading-[0.98] tracking-[-0.045em]">
@@ -127,7 +108,7 @@ export default function Services() {
             <p className="sv-intro-fade max-w-sm text-white/60">
               From high-volume apartment turns to detailed office janitorial work, we deliver consistent quality you can count on.
             </p>
-            <div className="sv-intro-fade mt-8 hidden items-center gap-4 text-xs uppercase tracking-[0.2em] text-white/40 lg:flex">
+            <div className="sv-intro-fade mt-8 hidden items-center gap-4 text-xs uppercase tracking-[0.2em] text-white/40 max-lg:motion-safe:flex lg:flex">
               Scroll
               <span className="relative h-px w-40 bg-white/15">
                 <span className="sv-progress absolute inset-0 origin-left scale-x-0 bg-brand-2" />
@@ -140,7 +121,7 @@ export default function Services() {
         {services.items.map((s, i) => (
           <article
             key={s.title}
-            className="sv-card group relative h-[70svh] min-h-[460px] shrink-0 overflow-hidden rounded-[28px] border border-white/10 bg-ink-2 lg:h-[72vh] lg:w-[min(36vw,560px)]"
+            className="sv-card group relative h-[70svh] min-h-[460px] shrink-0 overflow-hidden rounded-[28px] border border-white/10 bg-ink-2 max-lg:motion-safe:h-[72svh] max-lg:motion-safe:min-h-0 max-lg:motion-safe:w-[min(82vw,520px)] lg:h-[72vh] lg:w-[min(36vw,560px)]"
           >
             <div className="sv-img absolute inset-y-0 -left-[12%] w-[124%]">
               <Image
@@ -163,7 +144,7 @@ export default function Services() {
         ))}
 
         {/* Also offering */}
-        <div className="sv-also sv-card flex shrink-0 flex-col justify-between rounded-[28px] border border-white/10 bg-gradient-to-br from-brand/25 via-ink-2 to-ink-2 p-7 sm:p-9 lg:h-[72vh] lg:w-[30vw]">
+        <div className="sv-also sv-card flex shrink-0 flex-col justify-between rounded-[28px] border border-white/10 bg-gradient-to-br from-brand/25 via-ink-2 to-ink-2 p-7 sm:p-9 max-lg:motion-safe:h-[72svh] max-lg:motion-safe:w-[min(82vw,520px)] lg:h-[72vh] lg:w-[30vw]">
           <p className="sv-reveal text-xs uppercase tracking-[0.25em] text-brand-2">Also offering</p>
           <ul className="my-10 space-y-5">
             {services.also.map((a) => (
@@ -177,7 +158,7 @@ export default function Services() {
           </a>
         </div>
 
-        <div aria-hidden className="hidden w-[6vw] shrink-0 lg:block" />
+        <div aria-hidden className="hidden w-[6vw] shrink-0 max-lg:motion-safe:block lg:block" />
       </div>
     </section>
   );
